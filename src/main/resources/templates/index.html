@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="header align-center ">
+    <h1>Hotel Registration</h1>
+</div>
+<div class="group align-center">
+    <form action="#" th:action="@{/checkin}" th:object="${person}" method="post">
+        <h2 class="transparent-cover-small">Check-In</h2>
+        <input type="text" th:field="*{firstName}" placeholder="Vardas">
+        <input type="text" th:field="*{lastName}" placeholder="Pavarde">
+        <input type="submit" value="Check-In">
+    </form>
+    <h2 class="transparent-cover" th:text="${resultcheckin}"></h2>
+</div>
+<div class="group align-center">
+    <form action="#" th:action="@{/checkout}" th:object="${person}" method="post">
+        <h2 class="transparent-cover-small">Check-Out</h2>
+        <input type="text" th:field="*{firstName}" placeholder="Vardas">
+        <input type="text" th:field="*{lastName}" placeholder="Pavarde">
+        <input type="submit" value="Check-Out">
+    </form>
+</div>
+
+<div class="roominfo">
+    <h2 class="transparent-cover-small">Room information</h2>
+</div>
+<div class="rooms">
+    <div th:each="room : ${rooms}" class="room align-center">
+        <h2 th:text="${room.roomNr}"></h2>
+        <h3 th:text="${room.person.firstName}"></h3>
+        <h3 th:text="${room.person.lastName}"></h3>
+        <form action="#" th:action="@{/history}" th:object="${roomInfo}" method="get">
+            <input type="hidden" th:attr="name='roomNr'" th:value="${room.roomNr}">
+            <input type="submit" value="Show history">
+        </form>
+    </div>
+</div>
+<div class="info">
+    <table>
+        <tr th:each="element : ${historyinfo}">
+            <td th:text="${element.room.roomNr}"></td>
+            <td th:text="${element.room.person.firstName}"></td>
+            <td th:text="${element.room.person.lastName}"></td>
+            <td th:text="${{element.time}}"></td>
+            <td th:text="${element.action}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

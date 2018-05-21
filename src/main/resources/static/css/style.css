@@ -1,0 +1,77 @@
+h1 {
+    line-height: 200px;
+    font-size: 50;
+}
+
+.rooms {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room {
+    background-color: whitesmoke;
+    width: 21%;
+    float: left;
+    margin: 15px 2%;
+}
+
+input[type=text] {
+    width: 300px;
+    height: 30px;
+    padding: 0 15px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.roominfo h2 {
+     color: white;
+}
+
+table {
+  margin: 20px auto;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.nameinfo td {
+    text-align: center;
+}
+
+.buttonplace td {
+    text-align: center;
+}
+
+html {
+     background: url(https://www.thonhotels.com/siteassets/hoteller/norge/alesund/alesund-destinasjon.jpg?width=1100&height=550&mode=crop&quality=80) no-repeat center fixed;
+     background-size: cover;
+}
+
+.group h2 {
+    margin-bottom: 30px;
+}
+
+.transparent-cover {
+    background: rgba(153, 255, 204, 0.6);
+    margin: auto;
+    width:70%;
+}
+.transparent-cover-small {
+    background: rgba(153, 255, 204, 0.6);
+    margin: 15px auto;
+    width: fit-content;
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+    line-height: 15px;
+    background-color: white;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: red;
+}
